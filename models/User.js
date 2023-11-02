@@ -3,7 +3,7 @@ const Thought = require('./Thought');
 
 const userSchema = new Schema(
     {
-        userName: { 
+        username: { 
             type: String, 
             unique: true, 
             required: true, 
@@ -13,12 +13,17 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            validate: {
-                validator: () => Promise.resolve(false),
-                message: 'Email validation failed'
-              }
+            // validate: {
+            //     validator: () => Promise.resolve(false),
+            //     message: 'Email validation failed'
+            //   }
         },
-        thoughts: [Thought],
+        thoughts: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "thought"
+            }
+        ],
         friends: [
             {
                 type: Schema.Types.ObjectId,
@@ -30,7 +35,7 @@ const userSchema = new Schema(
         toJSON: {
             virtuals: true,
         },
-        id: true,
+        id: false,
     }
 );
 

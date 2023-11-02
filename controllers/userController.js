@@ -32,4 +32,35 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+  async updateUser(req, res) {
+    try {
+      const updateUserData = await User.findOneAndUpdate(
+        { _id: req.params.userId}, 
+        req.body,
+        {new: true}
+        )
+        .select('-__v');
+
+      if (!updateUserData) {
+        return res.status(404).json({ message: 'No user with that ID' });
+      }
+  
+      res.json(updateUserData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  },
+  async deleteUser(req, res) {
+    try {
+      const delUser = await User.findOneAndDelete({ _id: req.params.userId });
+
+      if(!delUser) {
+        return res.status(404).json({ message: 'No user with that ID' });
+      }
+
+      res.json({ message: `User ${delUser.username} was successfully deleted!` });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  }
 };
