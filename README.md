@@ -39,10 +39,13 @@ The following animation shows the POST, PUT, and DELETE routes for users being t
 
 ![Demo that shows the POST, PUT, and DELETE routes for users being tested in Insomnia.](./Assets/18-nosql-homework-demo-03.gif)
 
-In addition to this, your walkthrough video should show the POST, PUT, and DELETE routes for thoughts being tested in Insomnia.
-
 The following animation shows the POST and DELETE routes for a user’s friend list being tested in Insomnia:
 
 ![Demo that shows the POST and DELETE routes for a user’s friend list being tested in Insomnia.](./Assets/18-nosql-homework-demo-04.gif)
 
-In addition to this, your walkthrough video should show the POST and DELETE routes for reactions to thoughts being tested in Insomnia.
+
+## Walkthrough
+
+The following is a video walkthrough of the application's functionality:
+
+Click [here](https://drive.google.com/file/d/1VUm6fa0voOCr8rDdffDnApvnGiXzCn__/view) to watch the application walkthrough.
